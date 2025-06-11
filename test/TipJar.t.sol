@@ -10,6 +10,4 @@ contract TipJarTest is Test {
     function setUp() public {
         tipJar = new TipJar();
     }
-
-
 }

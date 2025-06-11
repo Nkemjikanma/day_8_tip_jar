@@ -9,20 +9,18 @@ contract TipJar {
     // currency to rate mapping
     mapping(string => uint256) public exchangeRate;
 
-   // contributions by address
-   mapping(address => uint256) public contributions;
+    // contributions by address
+    mapping(address => uint256) public contributions;
 
-   // contributions by address to currency;
-   mapping(address => mapping(string => uint256)) contributionsByCurrency;
+    // contributions by address to currency;
+    mapping(address => mapping(string => uint256)) contributionsByCurrency;
 
-   // total tips recieved
-  uint256 public totalTips;
+    // total tips recieved
+    uint256 public totalTips;
 
-
-  modifier onlyOnwer() {
-      if(msg.sender != owner) {
-          revert TipJar__NotAuthorized();
-      }
-  }
-
+    modifier onlyOnwer() {
+        if (msg.sender != owner) {
+            revert TipJar__NotAuthorized();
+        }
+    }
 }
