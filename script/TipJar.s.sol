@@ -5,7 +5,6 @@ import {Script, console} from "forge-std/Script.sol";
 import {TipJar} from "../src/TipJar.sol";
 
 contract TipJarScript is Script {
-    Counter public counter;
     TipJar public tipJar;
 
     function setUp() public {}
@@ -13,7 +12,12 @@ contract TipJarScript is Script {
     function run() public {
         vm.startBroadcast();
 
-        tipJar = new TipJar();
+        // all wrong addresses so do not use
+        tipJar = new TipJar(
+            0x5147eA642CAEF7BD9c1265AadcA78f997AbB9649,
+            0x5147eA642CAEF7BD9c1265AadcA78f997AbB9649,
+            0x5147eA642CAEF7BD9c1265AadcA78f997AbB9649
+        );
 
         vm.stopBroadcast();
     }
